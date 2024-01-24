@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<caml xmlns="http://www.apple.com/CoreAnimation/1.0">
+  <CALayer allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 750 1334" contentsFormat="RGBA8" masksToBounds="0" name="root" position="375 667">
+    <backgroundColor opacity="0" value="0 0 0"/>
+    <sublayers>
+      <CALayer id="0" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 750 1334" contentsFormat="RGBA8" hidden="1" name="0" position="375 667"/>
+      <CALayer id="1" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 750 1334" contentsFormat="RGBA8" hidden="1" name="1" position="375 667"/>
+      <CALayer id="2" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 750 1334" contentsFormat="RGBA8" hidden="1" name="2" position="375 667"/>
+      <CALayer id="3" allowsEdgeAntialiasing="1" allowsGroupOpacity="1" bounds="0 0 750 1334" contentsFormat="RGBA8" hidden="0" masksToBounds="0" name="3" position="375 667">
+	<sublayers>
+	  <CAEmitterLayer id="4" emitterShape="cuboid" preservesDepth="1" renderMode="backToFront" allowsEdgeAntialiasing="1" allowsGroupBlending="1" allowsGroupOpacity="1" bounds="0 0 750 1334" contentsFormat="RGBA8" geometryFlipped="0" hidden="0" name="4" position="375 667">
+	    <emitterCells>
+	      <CAEmitterCell alphaRange="0" alphaSpeed="0" autoreverses="0" beginTime="0" birthRate="28" blueRange="0" blueSpeed="0" color="1 1 1" contentsFrameCount="0" contentsFramesPerRow="0" contentsRect="0 0 1 1" contentsScale="2" duration="Inf" emissionLatitude="0" emissionLongitude="1.570796370506" emissionRange="0" enabled="1" fillMode="removed" greenRange="0" greenSpeed="0" lifetime="1.600000023842" lifetimeRange="1" mass="1" massRange="0" name="cell1" orientationLatitude="0" orientationLongitude="0" orientationRange="0" particleType="sprite" redRange="0" redSpeed="0" repeatCount="0" repeatDuration="0" rotation="0" rotationRange="0" scale="1" scaleRange="1" scaleSpeed="0" speed="1" spin="0" spinRange="0" timeOffset="0" velocity="40" velocityRange="0" xAcceleration="0" yAcceleration="100">
+		<contents type="CGImage" src="assets/smiley.tif"/>
+		<emitterBehaviors>
+		  <CAEmitterBehavior behavior="valueOverLife" name="valueOverLife" keyPath="color.alpha" additive="0">
+		    <locations>
+		      <integer value="0"/>
+		      <real value="0.1644999980927"/>
+		      <real value="0.75"/>
+		      <real value="0.8000000119209"/>
+		    </locations>
+		    <values>
+		      <integer value="0"/>
+		      <integer value="1"/>
+		      <integer value="1"/>
+		      <integer value="0"/>
+		    </values>
+		  </CAEmitterBehavior>
+		  <CAEmitterBehavior behavior="valueOverLife" name="valueOverLife 2" keyPath="mass" additive="0">
+		    <locations>
+		      <integer value="0"/>
+		      <real value="0.25"/>
+		    </locations>
+		    <values>
+		      <integer value="22"/>
+		      <integer value="1"/>
+		    </values>
+		  </CAEmitterBehavior>
+		  <CAEmitterBehavior behavior="valueOverLife" name="valueOverLife 3" keyPath="scale" additive="1">
+		    <locations>
+		      <integer value="0"/>
+		      <real value="0.07840000092983"/>
+		    </locations>
+		    <values>
+		      <integer value="0"/>
+		      <integer value="1"/>
+		    </values>
+		  </CAEmitterBehavior>
+		  <CAEmitterBehavior behavior="valueOverLife" name="valueOverLife 4" keyPath="scaleSpeed" additive="0">
+		    <locations>
+		      <integer value="0"/>
+		      <real value="0.1186999976635"/>
+		      <real value="0.3896000087261"/>
+		      <real value="0.8000000119209"/>
+		    </locations>
+		    <values>
+		      <integer value="0"/>
+		      <integer value="9"/>
+		      <real value="-4.800000190735"/>
+		      <integer value="0"/>
+		    </values>
+		  </CAEmitterBehavior>
+		</emitterBehaviors>
+	      </CAEmitterCell>
+	    </emitterCells>
+	  </CAEmitterLayer>
+	</sublayers>
+      </CALayer>
+    </sublayers>
+  </CALayer>
+</caml>
