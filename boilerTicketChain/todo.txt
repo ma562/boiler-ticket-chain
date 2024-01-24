@@ -1,0 +1,9 @@
+1. catch error when rejecting mint
+2. create a textbox input for running a loop to mint n number of times
+3. display images taken from array
+
+3/23
+Marketplace - profile button top right (profile shows which nft user owns)
+If the address of user != owner then mint button should not appear (hard coded)
+When an nft is clicked on we should get directed to the nft page
+Make everything nicer
