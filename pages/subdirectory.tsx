@@ -20,10 +20,6 @@ const Subdirectory = () => {
   // const [count, setCount] = useState(0);
 
   function inputValidation(){
-    // console.log(num, eventDate, city, stadium, state, typeof cost, time, opponent);
-    // console.log(typeof num);
-    // alert(Number(num))
-    // alert(time);
     
     if(Number(num) == 0){
       alert("Number of Mints should be a valid number")

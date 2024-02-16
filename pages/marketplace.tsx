@@ -62,10 +62,14 @@ const ImageList = () => {
     // console.log(tokenIds);
     let links_1 = await contract.getMarketplaceURI(tokenIds);
     // console.log(links_1);
-    let links = []
+
+
+    let links: string[] = [];
+
     let temp;
     for (let j = 0; j < links_1.length; j++) {
-      temp = await getDataURL(links_1[j])
+      const temp: string = await getDataURL(links_1[j]);
+      // temp = await getDataURL(links_1[j])
       // console.log(temp);
       links.push(temp)      
     }  
@@ -98,6 +102,8 @@ const ImageList = () => {
     
 
     setLinks(links);
+
+
     setToken(tokenIds);
     if(gameInfo.length != 0){
       setLoaded(true);

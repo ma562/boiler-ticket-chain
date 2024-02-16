@@ -4,18 +4,33 @@ const QRCode = require('qrcode')
 const fetch = require('node-fetch')
 const NFT_STORAGE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweENlNTBlYzMyMzdkZjlmZjVDOGQ1Mzk4QkI1OEM2YmMxMDE3NzE4NzIiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY3NzcxODIwNTA1OSwibmFtZSI6InRlc3RpbmcifQ.79LXpGPLKNp3tyYc-ZEE6ouUNAx5VB2eOnk1PhHoy74'
 
-export async function getDataURL(link){
+export async function getDataURL(link: string): Promise<string> {
     let resp = await fetch(link);
-    resp = await resp.text()
-    return resp
+    let text = await resp.text();
+    return text;
 }
 
-export function getEventHash(eventDate, city, stadium, state, cost, time, opponent){
-    // return crypto.randomUUID() + '__' + eventDate + '_' + opponent + '_' + place
-    return opponent + '_' + eventDate + '_' + time + '_' + city + '_' + state + '_' + stadium + '_' + cost
+
+// export function getEventHash(eventDate, city, stadium, state, cost, time, opponent){
+//     // return crypto.randomUUID() + '__' + eventDate + '_' + opponent + '_' + place
+//     return opponent + '_' + eventDate + '_' + time + '_' + city + '_' + state + '_' + stadium + '_' + cost
+// }
+
+export function getEventHash(
+  eventDate: string, 
+  city: string, 
+  stadium: string, 
+  state: string, 
+  cost: string, 
+  time: string, 
+  opponent: string
+): string {
+  // return crypto.randomUUID() + '__' + eventDate + '_' + opponent + '_' + place
+  return opponent + '_' + eventDate + '_' + time + '_' + city + '_' + state + '_' + stadium + '_' + cost;
 }
 
-async function storeNFT(data) {
+
+async function storeNFT(data: string): Promise<void> {
     console.log("Entered storeNFT");
     const nftstorage = new NFTStorage({ token: NFT_STORAGE_KEY })
     let ipfsHash = await nftstorage.storeBlob(new Blob([data]))
@@ -65,21 +80,33 @@ var opts = {
     }
 }
 
-async function getQRCode(name){
-    return new Promise((resolve, reject) => {
-        QRCode.toDataURL(name, opts, function(err, url){
-            if(err){
-                reject('QR Code gen failed')
-            }
-            else{
-                // console.log(url);
-                resolve(url)
-            }
-        })
-    })
+// async function getQRCode(name: string){
+//     return new Promise((resolve, reject) => {
+//         QRCode.toDataURL(name, opts, function(err, url){
+//             if(err){
+//                 reject('QR Code gen failed')
+//             }
+//             else{
+//                 // console.log(url);
+//                 resolve(url)
+//             }
+//         })
+//     })
+// }
+
+async function getQRCode(name: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    QRCode.toDataURL(name, opts, function(err: Error | null, url: string) {
+      if (err) {
+        reject('QR Code gen failed');
+      } else {
+        resolve(url);
+      }
+    });
+  });
 }
 
-export async function upload(hash, description){
+export async function upload(hash: string, description: string): Promise<void> {
     // var path = `./data/${num}.png`
     // console.log(QRCode);
     let qrcodeurl = await getQRCode(hash)
